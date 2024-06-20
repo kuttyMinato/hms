@@ -20,9 +20,13 @@ return new class extends Migration
             // $table->string('name')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->string('usertype')->default(0);
+            $table->boolean('patient')->default('false');
+            $table->boolean('doctor')->default('false');
+            $table->boolean('nurse')->default('false');
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
