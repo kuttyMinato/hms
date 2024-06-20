@@ -22,6 +22,9 @@ Route::get('/', function () {
 });
 
 
+Route::get('/',[HomeController::class,'index']);
+
+Route::get('/home',[HomeController::class,'redirect']);
 
 Route::middleware([
     'auth:sanctum',
