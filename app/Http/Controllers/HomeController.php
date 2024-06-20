@@ -52,7 +52,7 @@ class HomeController extends Controller
         if(Auth::id()){
             $data->user_id = Auth::user()->id;
         }
-        
+
         $data->save();
         return redirect()->back()->with('message','Appointment Request Sent Successfully..We will contact you soon..!');
 
@@ -60,7 +60,14 @@ class HomeController extends Controller
 
 
     }
+<<<<<<< HEAD
    
 
+=======
+    public function myappointments()
+    {
+        return view('user.my_appointment');
+    }
+>>>>>>> b3e4e0c051231287c367c407d9a06b188b47a240
 
 }
