@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::get('/',[HomeController::class,'index']);
 
@@ -33,3 +35,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/home', [HomeController::class, 'redirect'])->name('home');
+
+
+Route::get('/add_doctor_view', [AdminController::class, 'addview']);
+Route::post('/upload_doctor', [AdminController::class, 'upload']);
