@@ -113,7 +113,29 @@
     </nav>
   </header>
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
+  <div align="center" style="padding:70px;">
+
+    <table>
+
+        <tr style="background-color:black;">
+            <th style="padding:10px; font-size: 20px; color:white;">Doctor Name</th>
+            <th style="padding:10px; font-size: 20px; color:white;">Date</th>
+            <th style="padding:10px; font-size: 20px; color:white;">Message</th>
+            <th style="padding:10px; font-size: 20px; color:white;">Status</th>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+  </div>
+
+  {{-- <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make your life happier</span>
@@ -246,7 +268,7 @@
 
       <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
     </div>
-  </footer>
+  </footer> --}}
 
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
