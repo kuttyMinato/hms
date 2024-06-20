@@ -22,4 +22,8 @@ class AdminController extends Controller
        $doctor->save();
        return redirect()->back()->with('message','Doctor Added Successfully');
  }
+      public function showappointments(Request $request)
+      {
+            return view('admin.showappointment');
+      }
 }

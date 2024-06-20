@@ -35,8 +35,6 @@ class HomeController extends Controller
         }
         else
         {
-
-
         $doctor =doctor::all();
         return view('user.home',compact('doctor'));
 
@@ -47,7 +45,7 @@ class HomeController extends Controller
         $data->name=$request->input('name');
         $data->email=$request->input('email');
         $data->date=$request->input('date');
-        $data->doctor=$request->input('doctor').value('doctor');
+        $data->doctor=$request->input('doctor');
         $data->phone=$request->input('phone');
         $data->message=$request->input('message');
         $data->status='In Progress';
@@ -56,12 +54,13 @@ class HomeController extends Controller
         }
         
         $data->save();
-        return redirect()->back()->with('message','Appointment Request Sent Successfully');
+        return redirect()->back()->with('message','Appointment Request Sent Successfully..We will contact you soon..!');
 
 
 
 
     }
+   
 
 
 }

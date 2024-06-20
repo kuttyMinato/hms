@@ -56,7 +56,7 @@
                 @if (@session()->has('message'))
                     <div class="alert alert-success">
                         {{ session()->get('message') }}
-                        <button type="button" class="close"> &nbsp;&nbsp; x </button>
+                        <button type="button" class="close" onclick="$(this).parent().hide()"> x </button>
 
 
                     </div>
