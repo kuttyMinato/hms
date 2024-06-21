@@ -47,8 +47,11 @@ Route::post('/upload_doctor', [AdminController::class, 'upload']);
 Route::get('/showappointments', [AdminController::class, 'showappointments']);
 
 Route::post('/appointment', [HomeController::class, 'appointments']);
-<<<<<<< HEAD
 
-=======
 Route::get('/myappointment', [HomeController::class, 'myappointments']);
->>>>>>> b3e4e0c051231287c367c407d9a06b188b47a240
+
+Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
+
+Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
+
+Route::get('/editdoctor/{id}',[AdminController::class,'editdoctor']);
