@@ -33,7 +33,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return redirect('home');
-    })->name('dashboard');
+    });
 });
 
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth','verified')->name('home');
