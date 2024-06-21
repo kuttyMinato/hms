@@ -13,3 +13,14 @@
     <link rel="stylesheet" href="admin/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+    <style>
+          .image{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+    }
+    .pad{
+      padding:10px;
+    }
+    </style>

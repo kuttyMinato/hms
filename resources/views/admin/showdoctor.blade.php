@@ -38,44 +38,45 @@
         <!-- partial -->
         @include('admin.navbar')
         <!-- partial -->
-        {{-- @include('admin.body') --}}
-        <div class="container-fluid d-flex">
+
+        <div class="container-fluid">
             <div align="center" style="padding-top:75px;">
                 <table class="table table-bordered table-hover">
                     <thead class="table-secondary">
-                        <tr scope="row">
-                            <th  scope="col">Customer name</th>
-                            <th  scope="col">email</th>
+                        <tr class="pad">
+                            <th scope="col">Doctor name</th>
                             <th  scope="col">phone</th>
-                            <th  scope="col">Doctor name</th>
-                            <th  scope="col">date</th>
-                            <th  scope="col">message</th>
-                            <th  scope="col">status</th>
-                            <th  scope="col">Approved</th>
-                            <th  scope="col">cancel</th>
-                    </thead>
-                    </tr>
-                    @foreach ($data as $appoint)
-                        <tr scope="row" align="center" class="table-light" >
-                            <td>{{ $appoint->name }}</td>
-                            <td>{{ $appoint->email }}</td>
-                            <td>{{ $appoint->phone }}</td>
-                            <td>{{ $appoint->doctor }}</td>
-                            <td>{{ $appoint->date }}</td>
-                            <td>{{ $appoint->message }}</td>
-                            <td>{{ $appoint->status }}</td>
-                            <td>
-                                <a class="btn btn-success" href="{{ url('approved', $appoint->id) }}">Approved</a>
-                            </td>
-                            <td>
-                                <a class="btn btn-danger" href="{{ url('canceled', $appoint->id) }}">canceled</a>
+                            <th  scope="col">Speciality</th>
+                            <th  scope="col">room</th>
+                            <th  scope="col">image</th>
+                            <th  scope="col">Update</th>
+                            <th  scope="col">Delete</th>
+                            {{-- <th>status</th>
+                        <th>Approved</th>
+                        <th>cancel</th> --}}
 
-                            </td>
+                        </tr>
+                    </thead>
+                    @foreach ($data as $doctor)
+                        <tr align="center" class="table-light">
+                            <td>{{ $doctor->name }}</td>
+                            <td>{{ $doctor->phone }}</td>
+                            <td>{{ $doctor->speciality }}</td>
+                            <td>{{ $doctor->room }}</td>
+                            <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
+                          <td><a class="btn btn-info" href="{{ url('updatedoctor',$doctor->id) }}">Update</a></td>
+                            <td><a class="btn btn-danger" onclick="return confirm('Are you  sure want to delete..?')" href="{{ url('deletedoctor',$doctor->id) }}">Delete</a></td>
+                        
                         </tr>
                     @endforeach
                 </table>
             </div>
         </div>
+
+
+
+
+
         <!-- container-scroller -->
         <!-- plugins:js -->
         @include('admin.script')

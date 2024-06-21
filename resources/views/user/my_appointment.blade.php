@@ -125,7 +125,7 @@
             <th style="padding:10px; font-size: 20px; color:white;">Cancel Appointment</th>
         </tr>
 
-        @foreach (@appoint as @appoints)
+        @foreach ($appoint as $appoints)
 
         <tr style="background-color: black" align="center">
             <td style="padding:10px; color:white;">{{$appoints->doctor}}</td>

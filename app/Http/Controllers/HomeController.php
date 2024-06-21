@@ -84,5 +84,23 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+    public function approved($id)
+    {
+        $data = appointment::find($id);
+        $data->status = 'Approved';
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function cancelled($id)
+    {
+        $data = appointment::find($id);
+        $data->status = 'Cancelled';
+        $data->save();
+        return redirect()->back();
+        }
+
+
+
 
 }

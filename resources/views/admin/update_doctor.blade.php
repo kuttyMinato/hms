@@ -49,7 +49,7 @@
 
          <div>
 
-            {{-- <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data">
 
                 @csrf
 
@@ -88,7 +88,7 @@
                     <input type="submit" class="btn btn-primary">
                 </div>
 
-            </form> --}}
+            </form>
          </div>
 
 
