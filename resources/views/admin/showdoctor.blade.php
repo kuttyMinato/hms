@@ -39,7 +39,7 @@
         @include('admin.navbar')
         <!-- partial -->
 
-        <div class="container-fluid">
+        <div class="container-fluid page-body-wrapper">
             <div align="center" style="padding-top:75px;">
                 <table class="table table-bordered table-hover">
                     <thead class="table-secondary">
@@ -51,6 +51,8 @@
                             <th  scope="col">image</th>
                             <th  scope="col">Update</th>
                             <th  scope="col">Delete</th>
+                            <th  scope="col">Send Mail</th>
+
                             {{-- <th>status</th>
                         <th>Approved</th>
                         <th>cancel</th> --}}
@@ -66,6 +68,10 @@
                             <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
                             <td><a class="btn btn-info" href="{{ url('updatedoctor',$doctor->id) }}">Update</a></td>
                             <td><a class="btn btn-danger" onclick="return confirm('Are you  sure want to delete..?')" href="{{ url('deletedoctor',$doctor->id) }}">Delete</a></td>
+                            <td><a class="btn btn-success" href="{{ url('sendmail',$doctor->id) }}">Send Mail</a></td>
+
+                         
+
 
                         </tr>
                     @endforeach

@@ -33,7 +33,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return redirect('home');
-    });
+    })->name('dashboard');
 });
 
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth','verified')->name('home');
@@ -66,8 +66,15 @@ Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
 Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 
-Route::post('/editdoctor/{id}',[AdminController::class,'editdoctor']);
+Route::get('/editdoctor/{id}',[AdminController::class,'editdoctor']);
 
-Route::get('/emailview/{id}',[AdminController::class,'emailview']);
+Route::post('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 
+// Route::get('/search',[AdminController::class,'search']);
+
+// Route::get('/search_doctor',[AdminController::class,'search_doctor']);
+
+Route::get('/sendmail/{id}',[AdminController::class,'emailview']);
 Route::post('/sendemail/{id}',[AdminController::class,'sendemail']);
+
+
