@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use Notification;
+use App\Notifications\SendEmailNotification;
 
 class AdminController extends Controller
 {
@@ -69,17 +71,58 @@ class AdminController extends Controller
 
         $image=$request->file;
 
-        $imagename=time().'.'.$image->getOriginalClientExtension();
+        if($image)
+        {
 
-        $request->file->move('doctorimage',$imagename);
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+
+            $request->file->move('doctorimage',$imagename);
 
 
-        $doctor->image=$imagename;
+            $doctor->image=$imagename;
+
+        }
+
+
 
 
 
         $doctor->save();
         return redirect()->back()->with('message','Doctor Updated Successfully');
+
+      }
+
+
+      public function emailview($id)
+      {
+
+        $data = appointment::find($id);
+
+        return view('admin.email_view',compact('data'));
+      }
+
+      public function sendemail(Request $request,$id)
+      {
+
+        $data = appointment::find($id);
+
+        $details = [
+
+            'greeting' => $request->greeting,
+
+            'body' => $request->body,
+
+            'actiontext' => $request->actiontext,
+
+            'actionurl' => $request->actionurl,
+
+            'endpart' => $request->endpart
+        ];
+
+        Notification::send($data,new SendEmailNotification($details));
+
+
+        return redirect()->back()->with('message','Email send is Successful');
 
       }
 }

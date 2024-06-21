@@ -66,4 +66,8 @@ Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
 Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 
-Route::get('/editdoctor/{id}',[AdminController::class,'editdoctor']);
+Route::post('/editdoctor/{id}',[AdminController::class,'editdoctor']);
+
+Route::get('/emailview/{id}',[AdminController::class,'emailview']);
+
+Route::post('/sendemail/{id}',[AdminController::class,'sendemail']);

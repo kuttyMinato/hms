@@ -3,10 +3,18 @@
 
 <head>
     <!-- Required meta tags -->
+
+    <base href="/public">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hostz Admin</title>
     <!-- plugins:css -->
+    <style>
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
     @include('admin.css')
 </head>
 
@@ -37,46 +45,57 @@
         @include ('admin.sidebar')
         <!-- partial -->
         @include('admin.navbar')
+
         <!-- partial -->
+        {{-- @include('admin.body') --}}
+        <div class="container-fluid page-body-wrapper">
 
-        <div class="container-fluid">
-            <div align="center" style="padding-top:75px;">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-secondary">
-                        <tr class="pad">
-                            <th scope="col">Doctor name</th>
-                            <th  scope="col">phone</th>
-                            <th  scope="col">Speciality</th>
-                            <th  scope="col">room</th>
-                            <th  scope="col">image</th>
-                            <th  scope="col">Update</th>
-                            <th  scope="col">Delete</th>
-                            {{-- <th>status</th>
-                        <th>Approved</th>
-                        <th>cancel</th> --}}
 
-                        </tr>
-                    </thead>
-                    @foreach ($data as $doctor)
-                        <tr align="center" class="table-light">
-                            <td>{{ $doctor->name }}</td>
-                            <td>{{ $doctor->phone }}</td>
-                            <td>{{ $doctor->speciality }}</td>
-                            <td>{{ $doctor->room }}</td>
-                            <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
-                            <td><a class="btn btn-info" href="{{ url('updatedoctor',$doctor->id) }}">Update</a></td>
-                            <td><a class="btn btn-danger" onclick="return confirm('Are you  sure want to delete..?')" href="{{ url('deletedoctor',$doctor->id) }}">Delete</a></td>
 
-                        </tr>
-                    @endforeach
-                </table>
+
+            <div class="container pt-5" align="center">
+
+                @if (@session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                        <button type="button" class="close" onclick="$(this).parent().hide()"> x </button>
+
+
+                    </div>
+                @endif
+                <form action="{{ url('sendemail',$data->id) }}" method="POST">
+                    @csrf
+                    <div class="p-2">
+                        <label>Greeting:</label>
+                        <input type="text" name="greeting" style="color:black;" required="">
+                    </div>
+                    <div class="p-2">
+                        <label>Body:</label>
+                        <input type="text" name="body" style="color:black;" required="">
+                    </div>
+
+                    <div class="p-2">
+                        <label>Action Text:</label>
+                        <input type="text" name="actiontext" style="color:black;" required="">
+                    </div>
+
+                    <div class="p-2">
+                        <label>Action Url:</label>
+                        <input type="text" name="actionurl" style="color:black;" required="">
+                    </div>
+
+                    <div class="p-2">
+                        <label>End Part:</label>
+                        <input type="text" name="endpart" style="color:black;" required="">
+                    </div>
+
+                    <div class="p-2">
+
+                        <input type="submit" class="btn btn-success">
+                    </div>
+                </form>
             </div>
         </div>
-
-
-
-
-
         <!-- container-scroller -->
         <!-- plugins:js -->
         @include('admin.script')
