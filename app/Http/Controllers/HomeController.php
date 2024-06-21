@@ -60,14 +60,27 @@ class HomeController extends Controller
 
 
     }
-<<<<<<< HEAD
-   
-
-=======
     public function myappointments()
     {
         return view('user.my_appointment');
     }
->>>>>>> b3e4e0c051231287c367c407d9a06b188b47a240
+    public function approved($id)
+    {
+        $data = appointment::find($id);
+        $data->status = 'Approved';
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function cancelled($id)
+    {
+        $data = appointment::find($id);
+        $data->status = 'Cancelled';
+        $data->save();
+        return redirect()->back();
+        }
+
+        
+
 
 }

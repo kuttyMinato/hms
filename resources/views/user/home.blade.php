@@ -269,9 +269,6 @@
 
         <script src="../assets/vendor/wow/wow.min.js"></script>
 
-<<<<<<< HEAD
-        <script src="../assets/js/theme.js"></script>
-=======
             <li class="nav-item">
                 <a class="nav-link" style="background-color: greenyellow; color: white;" href="{{url('myappointment')}}">My Appointment</a>
               </li>
@@ -442,7 +439,6 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/theme.js"></script>
->>>>>>> b3e4e0c051231287c367c407d9a06b188b47a240
 
 </body>
 
