@@ -47,7 +47,19 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
 
-         <div>
+
+
+
+         <div class="container" align="center" style="padding:100px">
+
+            @if (@session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+                <button type="button" class="close" onclick="$(this).parent().hide()"> x </button>
+
+
+            </div>
+        @endif
 
             <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data">
 
