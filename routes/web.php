@@ -17,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/home',[HomeController::class,'redirect']);
+
 
 Route::middleware([
     'auth:sanctum',
@@ -32,11 +32,11 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect('home');
     })->name('dashboard');
 });
 
-Route::get('/home', [HomeController::class, 'redirect'])->name('home');
+Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth','verified')->name('home');
 
 
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
