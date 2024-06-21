@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Appointment;
-use Notification;
+use Illuminate\Support\Facades\Notification;
 use App\Notifications\SendEmailNotification;
+
 
 class AdminController extends Controller
 {
