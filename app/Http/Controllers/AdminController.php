@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\patients_informations;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\SendEmailNotification;
 
@@ -89,7 +90,7 @@ class AdminController extends Controller
 
 
         $doctor->save();
-        return redirect()->back()->with('message','Doctor Updated Successfully');
+        return redirect('/showdoctor')->with('message','Doctor Updated Successfully');
 
       }
 
@@ -125,5 +126,10 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message','Email send is Successful');
 
+      }
+
+      public function patients(){
+            $data=patients_informations::all();
+            return view('admin.showpatients',compact('data'));
       }
 }

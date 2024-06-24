@@ -131,11 +131,11 @@
             {{-- </div> --}}
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('add_doctor_view')}}">
+            <a class="nav-link" href="{{url('patients')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">Add Doctors</span>
+              <span class="menu-title">Patients</span>
             </a>
           </li>
           <li class="nav-item menu-items">

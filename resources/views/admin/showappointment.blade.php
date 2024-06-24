@@ -39,8 +39,8 @@
         @include('admin.navbar')
         <!-- partial -->
         {{-- @include('admin.body') --}}
-        <div class="container-fluid d-flex">
-            <div align="center" style="padding-top:75px;">
+        <div class="container-fluid">
+            <div class="container" align="center" style="padding-top:75px; ">
                 <table class="table table-bordered table-hover">
                     <thead class="table-secondary">
                         <tr scope="row">

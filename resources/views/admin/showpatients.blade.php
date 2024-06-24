@@ -42,9 +42,9 @@
         <div class="container-fluid ">
             <div align="center" style="padding-top:75px;">
                 <div class="container" align="center" style="padding:100px">
-<div>
+{{-- <div>
     <a href="{{url('add_doctor_view')}}" class="btn btn-success float-end mb-3">Add Doctor</a>
-</div>
+</div> --}}
                     @if (@session()->has('message'))
                         <div class="alert alert-success">
                             {{ session()->get('message') }}
@@ -58,13 +58,14 @@
                         <thead class="table-secondary">
                             <tr class="pad">
                                 <th scope="col">Doctor name</th>
-                                <th scope="col">phone</th>
-                                <th scope="col">Speciality</th>
-                                <th scope="col">room</th>
-                                <th scope="col">image</th>
-                                <th scope="col">Update</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Insurance</th>
+                                <th scope="col">Emergency</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Gender</th>
+                                {{-- <th scope="col">Update</th> --}}
                                 <th scope="col">Delete</th>
-                                <th scope="col">Send Mail</th>
+                                {{-- <th scope="col">Send Mail</th> --}}
 
                                 {{-- <th>status</th>
                         <th>Approved</th>
@@ -75,17 +76,19 @@
                         @foreach ($data as $doctor)
                             <tr align="center" class="table-light">
                                 <td>{{ $doctor->name }}</td>
-                                <td>{{ $doctor->phone }}</td>
-                                <td>{{ $doctor->speciality }}</td>
-                                <td>{{ $doctor->room }}</td>
-                                <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
-                                <td><a class="btn btn-info" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
-                                </td>
+                                <td>{{ $doctor->contactinfo }}</td>
+                                <td>{{ $doctor->insuranceinfo }}</td>
+                                <td>{{ $doctor->emergencydetails }}</td>
+                                <td>{{ $doctor->DOB }}</td>
+                                <td>{{ $doctor->gender }}</td>
+                                {{-- <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td> --}}
+                                {{-- <td><a class="btn btn-info" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
+                                </td> --}}
                                 <td><a class="btn btn-danger"
                                         onclick="return confirm('Are you  sure want to delete..?')"
                                         href="{{ url('deletedoctor', $doctor->id) }}">Delete</a></td>
-                                <td><a class="btn btn-success" href="{{ url('sendmail', $doctor->id) }}">Send Mail</a>
-                                </td>
+                                {{-- <td><a class="btn btn-success" href="{{ url('sendmail', $doctor->id) }}">Send Mail</a>
+                                </td> --}}
 
 
 
