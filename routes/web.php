@@ -64,9 +64,10 @@ Route::get('/myappointment', [HomeController::class, 'myappointments']);
 
 Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
-Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
+// Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 
-Route::get('/editdoctor/{id}',[AdminController::class,'editdoctor']);
+// Route::get('/editdoctor/{id}',[AdminController::class,'editdoctor']);
+Route::post('/editdoctor/{id}',[AdminController::class,'editdoctor']);
 
 Route::post('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 

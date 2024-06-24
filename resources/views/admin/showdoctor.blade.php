@@ -37,56 +37,66 @@
         @include ('admin.sidebar')
         <!-- partial -->
         @include('admin.navbar')
-        <!-- partial -->
+        <!-- partial -->    
 
-        <div class="container-fluid page-body-wrapper">
+        <div class="container-fluid ">
             <div align="center" style="padding-top:75px;">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-secondary">
-                        <tr class="pad">
-                            <th scope="col">Doctor name</th>
-                            <th  scope="col">phone</th>
-                            <th  scope="col">Speciality</th>
-                            <th  scope="col">room</th>
-                            <th  scope="col">image</th>
-                            <th  scope="col">Update</th>
-                            <th  scope="col">Delete</th>
-                            <th  scope="col">Send Mail</th>
+                <div class="container" align="center" style="padding:100px">
 
-                            {{-- <th>status</th>
+                    @if (@session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                            <button type="button" class="close" onclick="$(this).parent().hide()"> x </button>
+
+
+                        </div>
+                    @endif
+
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-secondary">
+                            <tr class="pad">
+                                <th scope="col">Doctor name</th>
+                                <th scope="col">phone</th>
+                                <th scope="col">Speciality</th>
+                                <th scope="col">room</th>
+                                <th scope="col">image</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Send Mail</th>
+
+                                {{-- <th>status</th>
                         <th>Approved</th>
                         <th>cancel</th> --}}
 
-                        </tr>
-                    </thead>
-                    @foreach ($data as $doctor)
-                        <tr align="center" class="table-light">
-                            <td>{{ $doctor->name }}</td>
-                            <td>{{ $doctor->phone }}</td>
-                            <td>{{ $doctor->speciality }}</td>
-                            <td>{{ $doctor->room }}</td>
-                            <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
-                            <td><a class="btn btn-info" href="{{ url('updatedoctor',$doctor->id) }}">Update</a></td>
-                            <td><a class="btn btn-danger" onclick="return confirm('Are you  sure want to delete..?')" href="{{ url('deletedoctor',$doctor->id) }}">Delete</a></td>
-                            <td><a class="btn btn-success" href="{{ url('sendmail',$doctor->id) }}">Send Mail</a></td>
+                            </tr>
+                        </thead>
+                        @foreach ($data as $doctor)
+                            <tr align="center" class="table-light">
+                                <td>{{ $doctor->name }}</td>
+                                <td>{{ $doctor->phone }}</td>
+                                <td>{{ $doctor->speciality }}</td>
+                                <td>{{ $doctor->room }}</td>
+                                <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
+                                <td><a class="btn btn-info" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
+                                </td>
+                                <td><a class="btn btn-danger"
+                                        onclick="return confirm('Are you  sure want to delete..?')"
+                                        href="{{ url('deletedoctor', $doctor->id) }}">Delete</a></td>
+                                <td><a class="btn btn-success" href="{{ url('sendmail', $doctor->id) }}">Send Mail</a>
+                                </td>
 
-                         
 
 
-                        </tr>
-                    @endforeach
-                </table>
+
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
             </div>
-        </div>
-
-
-
-
-
-        <!-- container-scroller -->
-        <!-- plugins:js -->
-        @include('admin.script')
-        <!-- End custom js for this page -->
+            <!-- container-scroller -->
+            <!-- plugins:js -->
+            @include('admin.script')
+            <!-- End custom js for this page -->
 </body>
 
 </html>

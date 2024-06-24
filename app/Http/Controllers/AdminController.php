@@ -89,7 +89,7 @@ class AdminController extends Controller
 
 
         $doctor->save();
-        return redirect()->back()->with('message','Doctor Updated Successfully');
+        return redirect('/showdoctor')->with('message','Doctor Updated Successfully');
 
       }
 
