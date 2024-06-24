@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,5 +81,8 @@ Route::get('/sendmail/{id}',[AdminController::class,'emailview']);
 Route::post('/sendemail/{id}',[AdminController::class,'sendemail']);
 
 Route::get('patients',[AdminController::class,'patients']);
+
+
+Route::get('generate-pdf/{id}',[PdfController::class,'generatePDF']);
 
 

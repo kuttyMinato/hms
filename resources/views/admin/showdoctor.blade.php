@@ -79,7 +79,7 @@
                                 <td>{{ $doctor->speciality }}</td>
                                 <td>{{ $doctor->room }}</td>
                                 <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
-                                <td><a class="btn btn-info" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
+                                <td><a class="btn btn-primary" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
                                 </td>
                                 <td><a class="btn btn-danger"
                                         onclick="return confirm('Are you  sure want to delete..?')"

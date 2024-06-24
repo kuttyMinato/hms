@@ -40,8 +40,8 @@
         <!-- partial -->
         {{-- @include('admin.body') --}}
         <div class="container-fluid">
-            <div class="container" align="center" style="padding-top:75px; ">
-                <table class="table table-bordered table-hover">
+            <div class="container scrollbar" align="center" style="padding-top:75px;">
+                <table class="table table-bordered table-hover ">
                     <thead class="table-secondary">
                         <tr scope="row">
                             <th  scope="col">Customer name</th>

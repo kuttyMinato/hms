@@ -39,7 +39,7 @@
         @include('admin.navbar')
         <!-- partial -->    
 
-        <div class="container-fluid ">
+        <div class="container">
             <div align="center" style="padding-top:75px;">
                 <div class="container" align="center" style="padding:100px">
 {{-- <div>
