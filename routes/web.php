@@ -75,6 +75,7 @@ Route::post('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
 // Route::get('/search_doctor',[AdminController::class,'search_doctor']);
 
 Route::get('/sendmail/{id}',[AdminController::class,'emailview']);
+
 Route::post('/sendemail/{id}',[AdminController::class,'sendemail']);
 
 
