@@ -42,7 +42,9 @@
         <div class="container-fluid ">
             <div align="center" style="padding-top:75px;">
                 <div class="container" align="center" style="padding:100px">
-
+<div>
+    <a href="{{url('add_doctor_view')}}" class="btn btn-success float-end mb-3">Add Doctor</a>
+</div>
                     @if (@session()->has('message'))
                         <div class="alert alert-success">
                             {{ session()->get('message') }}
