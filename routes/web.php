@@ -79,4 +79,6 @@ Route::get('/sendmail/{id}',[AdminController::class,'emailview']);
 
 Route::post('/sendemail/{id}',[AdminController::class,'sendemail']);
 
+Route::get('patients',[AdminController::class,'patients']);
+
 
