@@ -55,7 +55,7 @@
                     @endif
 
                     <table class="table table-bordered table-hover">
-                        <thead class="table-secondary">
+                        <thead class="table-secondary" align="center">
                             <tr class="pad">
                                 <th scope="col">Doctor name</th>
                                 <th scope="col">phone</th>

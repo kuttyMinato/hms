@@ -117,7 +117,7 @@
 
     <table>
 
-        <tr style="background-color:black;">
+        <tr style="background-color:black;" align="center">
             <th style="padding:10px; font-size: 20px; color:white;">Doctor Name</th>
             <th style="padding:10px; font-size: 20px; color:white;">Date</th>
             <th style="padding:10px; font-size: 20px; color:white;">Message</th>
