@@ -23,4 +23,42 @@
     .pad{
       padding:10px;
     }
+
+
+    .scrollbar {
+    overflow: auto;
+}
+
+/* The scrollbar */
+.scrollbar::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 8px; /* Height of the horizontal scrollbar */
+}
+
+/* The track (background of the scrollbar) */
+.scrollbar::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track:hover {
+    background: #888;
+    border-radius: 10px;
+}
+/* The handle (the scroll indicator) */
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #b8b6b6;
+}
+
+/* Optional: Corner where the horizontal and vertical scrollbars meet */
+.scrollbar::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+}
+
     </style>

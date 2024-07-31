@@ -40,9 +40,9 @@
         <!-- partial -->
         {{-- @include('admin.body') --}}
         <div class="container-fluid">
-            <div class="container" align="center" style="padding-top:75px; ">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-secondary">
+            <div class="container scrollbar" align="center" style="padding-top:75px;">
+                <table class="table table-bordered table-hover ">
+                    <thead class="table-secondary"align="center" >
                         <tr scope="row">
                             <th  scope="col">Customer name</th>
                             <th  scope="col">email</th>

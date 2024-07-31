@@ -117,12 +117,14 @@
 
     <table>
 
-        <tr style="background-color:black;">
+        <tr style="background-color:black;" align="center">
             <th style="padding:10px; font-size: 20px; color:white;">Doctor Name</th>
             <th style="padding:10px; font-size: 20px; color:white;">Date</th>
             <th style="padding:10px; font-size: 20px; color:white;">Message</th>
             <th style="padding:10px; font-size: 20px; color:white;">Status</th>
             <th style="padding:10px; font-size: 20px; color:white;">Cancel Appointment</th>
+            <th style="padding:10px; font-size: 20px; color:white;">Download</th>
+            
         </tr>
 
         @foreach ($appoint as $appoints)
@@ -130,9 +132,11 @@
         <tr style="background-color: black" align="center">
             <td style="padding:10px; color:white;">{{$appoints->doctor}}</td>
             <td style="padding:10px; color:white;">{{$appoints->date}}</td>
-            <td style="padding:10px; color:white;">{{$appoints->Message}}</td>
+            <td style="padding:10px; color:white;">{{$appoints->message}}</td>
             <td style="padding:10px; color:white;">{{$appoints->status}}</td>
             <td><a class="bt btn-danger" onclick="return confirm('Are you sure to delete this...!')" href="{{url('cancel_appoint',$appoints->id)}}">Cancel</a></td>
+      
+            <td style="padding:10px; color:white;"><a onclick="return confirm('Are you sure want to download Appointment...?')" href="{{url('generate-pdf',$appoints->id)}}">&#8595;</a></td>
         </tr>
 
         @endforeach

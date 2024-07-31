@@ -55,7 +55,7 @@
                     @endif
 
                     <table class="table table-bordered table-hover">
-                        <thead class="table-secondary">
+                        <thead class="table-secondary" align="center">
                             <tr class="pad">
                                 <th scope="col">Doctor name</th>
                                 <th scope="col">phone</th>
@@ -79,7 +79,7 @@
                                 <td>{{ $doctor->speciality }}</td>
                                 <td>{{ $doctor->room }}</td>
                                 <td><img src="doctorimage/{{ $doctor->image }}" alt="doc"class="image"></td>
-                                <td><a class="btn btn-info" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
+                                <td><a class="btn btn-primary" href="{{ url('updatedoctor', $doctor->id) }}">Update</a>
                                 </td>
                                 <td><a class="btn btn-danger"
                                         onclick="return confirm('Are you  sure want to delete..?')"
@@ -95,10 +95,6 @@
                     </table>
                 </div>
             </div>
-            <!-- container-scroller -->
-            <!-- plugins:js -->
-            @include('admin.script')
-            <!-- End custom js for this page -->
 </body>
 
 </html>

@@ -11,6 +11,8 @@
 
     <title>One Health </title>
 
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../assets/css/maicons.css">
 
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -44,7 +46,8 @@
                             <a href="#"><span class="mai-logo-twitter"></span></a>
                             <a href="#"><span class="mai-logo-dribbble"></span></a>
                             <a href="#"><span class="mai-logo-instagram"></span></a>
-                        </div>
+
+                      </div>
                     </div>
                 </div> <!-- .row -->
             </div> <!-- .container -->
